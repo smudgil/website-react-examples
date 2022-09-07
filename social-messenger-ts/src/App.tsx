@@ -52,7 +52,6 @@ const App = (props: AppProps) => {
     <Chat client={chatClient} theme={`messaging ${theme}`}>
       <div className='messaging__sidebar' id='mobile-channel-list' onClick={toggleMobile}>
         <MessagingChannelListHeader
-          onCreateChannel={() => setIsCreating(!isCreating)}
           theme={theme}
         />
         <ChannelList

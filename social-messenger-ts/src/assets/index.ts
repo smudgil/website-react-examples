@@ -31,7 +31,6 @@ export { ChannelInfoIcon } from './ChannelInfoIcon';
 export { ChannelSaveIcon } from './ChannelSaveIcon';
 export { CloseThreadIcon } from './CloseThreadIcon';
 export { CommandIcon } from './CommandIcon';
-export { CreateChannelIcon } from './CreateChannelIcon';
 export { EmojiIcon } from './EmojiIcon';
 export { HamburgerIcon } from './HamburgerIcon';
 export { LightningBoltSmall } from './LightningBoltSmall';
