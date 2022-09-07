@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useChannelStateContext, useChatContext } from 'stream-chat-react';
 import './MessagingChannelHeader.css';
 import { AvatarGroup } from '../';
@@ -9,8 +9,7 @@ const MessagingChannelHeader = () => {
   const { client } = useChatContext<StreamChatGenerics>();
   const { channel } = useChannelStateContext<StreamChatGenerics>();
   const [channelName] = useState(channel.data?.name || '');
-  const [title, setTitle] = useState('');
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [_, setTitle] = useState('');
 
   const members = Object.values(channel.state.members || {}).filter(
     (member) => member.user?.id !== client?.user?.id,

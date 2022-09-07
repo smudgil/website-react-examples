@@ -10,29 +10,6 @@ import type { Dispatch, SetStateAction } from 'react';
 import type { Channel, ChannelMemberResponse } from 'stream-chat';
 import type { StreamChatGenerics } from '../../types';
 
-const getTimeStamp = (channel: Channel) => {
-  let lastHours = channel.state.last_message_at?.getHours();
-  let lastMinutes: string | number | undefined = channel.state.last_message_at?.getMinutes();
-  let half = 'AM';
-
-  if (lastHours === undefined || lastMinutes === undefined) {
-    return '';
-  }
-
-  if (lastHours > 12) {
-    lastHours = lastHours - 12;
-    half = 'PM';
-  }
-
-  if (lastHours === 0) lastHours = 12;
-  if (lastHours === 12) half = 'PM';
-
-  if (lastMinutes.toString().length === 1) {
-    lastMinutes = `0${lastMinutes}`;
-  }
-
-  return `${lastHours}:${lastMinutes} ${half}`;
-};
 
 const getChannelName = (members: ChannelMemberResponse[]) => {
   const defaultName = 'Johnny Blaze';
@@ -76,7 +53,6 @@ const MessagingChannelPreview = (props: Props) => {
           <p className='channel-preview__content-name'>
             {channel.data?.name || getChannelName(members)}
           </p>
-          <p className='channel-preview__content-time'>{getTimeStamp(channel)}</p>
         </div>
         <p className='channel-preview__content-message'>{lastMessage?.text ?? 'Send a message'}</p>
       </div>

@@ -11,7 +11,6 @@ import {
   MessagingChannelListHeader,
   MessagingChannelPreview,
   MessagingInput,
-  MessagingThreadHeader,
 } from './components';
 
 import { ChannelInner } from './components/ChannelInner/ChannelInner';
@@ -70,7 +69,6 @@ const App = (props: AppProps) => {
           Input={MessagingInput}
           maxNumberOfFiles={10}
           multipleUploads={true}
-          ThreadHeader={MessagingThreadHeader}
         >
           {isCreating && (
             <CreateChannel toggleMobile={toggleMobile} onClose={() => setIsCreating(false)} />
