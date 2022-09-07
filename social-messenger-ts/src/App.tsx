@@ -7,7 +7,6 @@ import './App.css';
 
 import {
   CreateChannel,
-  CustomMessage,
   MessagingChannelList,
   MessagingChannelListHeader,
   MessagingChannelPreview,
@@ -70,10 +69,8 @@ const App = (props: AppProps) => {
         <Channel
           Input={MessagingInput}
           maxNumberOfFiles={10}
-          Message={CustomMessage}
           multipleUploads={true}
           ThreadHeader={MessagingThreadHeader}
-          TypingIndicator={() => null}
         >
           {isCreating && (
             <CreateChannel toggleMobile={toggleMobile} onClose={() => setIsCreating(false)} />

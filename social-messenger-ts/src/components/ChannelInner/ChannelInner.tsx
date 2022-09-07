@@ -1,4 +1,3 @@
-import React from 'react';
 import { logChatPromiseExecution } from 'stream-chat';
 import {
   MessageList,
@@ -66,7 +65,7 @@ export const ChannelInner = (props: ChannelInnerProps) => {
   return (
     <>
       <Window>
-        <MessagingChannelHeader theme={theme} toggleMobile={toggleMobile} />
+        <MessagingChannelHeader />
         <MessageList messageActions={actions} />
         <MessageInput focus overrideSubmitHandler={overrideSubmitHandler} />
       </Window>
