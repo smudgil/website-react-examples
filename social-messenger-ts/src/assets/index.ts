@@ -29,7 +29,6 @@ import avatar24 from './userImages/photo-1552058544-f2b08422138a.jpeg';
 
 export { ChannelInfoIcon } from './ChannelInfoIcon';
 export { ChannelSaveIcon } from './ChannelSaveIcon';
-export { CloseThreadIcon } from './CloseThreadIcon';
 export { CommandIcon } from './CommandIcon';
 export { EmojiIcon } from './EmojiIcon';
 export { HamburgerIcon } from './HamburgerIcon';

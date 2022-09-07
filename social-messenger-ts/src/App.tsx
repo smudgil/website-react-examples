@@ -35,7 +35,7 @@ type AppProps = {
 
 const App = (props: AppProps) => {
   const { apiKey, userToConnect, userToken, targetOrigin, channelListOptions } = props;
-  const [isCreating, setIsCreating] = useState(false);
+  const [_, setIsCreating] = useState(false);
 
   const chatClient = useConnectUser<StreamChatGenerics>(apiKey, userToConnect, userToken);
   const toggleMobile = useMobileView();
@@ -69,7 +69,7 @@ const App = (props: AppProps) => {
           multipleUploads={true}
         >
           <GiphyContextProvider>
-            <ChannelInner theme={theme} toggleMobile={toggleMobile} />
+            <ChannelInner  />
           </GiphyContextProvider>
         </Channel>
       </div>
