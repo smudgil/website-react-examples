@@ -6,7 +6,6 @@ import '@stream-io/stream-chat-css/dist/css/index.css';
 import './App.css';
 
 import {
-  CreateChannel,
   MessagingChannelList,
   MessagingChannelListHeader,
   MessagingChannelPreview,
@@ -70,9 +69,6 @@ const App = (props: AppProps) => {
           maxNumberOfFiles={10}
           multipleUploads={true}
         >
-          {isCreating && (
-            <CreateChannel toggleMobile={toggleMobile} onClose={() => setIsCreating(false)} />
-          )}
           <GiphyContextProvider>
             <ChannelInner theme={theme} toggleMobile={toggleMobile} />
           </GiphyContextProvider>
