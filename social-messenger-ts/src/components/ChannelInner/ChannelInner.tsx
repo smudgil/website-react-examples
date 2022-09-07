@@ -66,7 +66,7 @@ export const ChannelInner = (props: ChannelInnerProps) => {
     <>
       <Window>
         <MessagingChannelHeader />
-        <MessageList messageActions={actions} />
+        <MessageList disableDateSeparator messageActions={actions} />
         <MessageInput focus overrideSubmitHandler={overrideSubmitHandler} />
       </Window>
       <Thread Input={MessagingInput} />
