@@ -3,11 +3,9 @@ import {
   Window,
 } from 'stream-chat-react';
 
-import { MessagingChannelHeader, MessagingInput } from '../../components';
+import { MessagingChannelHeader } from '../../components';
 
 export const ChannelInner = () => {
-
-
 
   return (
     <>
