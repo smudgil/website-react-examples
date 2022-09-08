@@ -19,7 +19,7 @@ import { useUpdateAppHeightOnResize } from './hooks/useUpdateAppHeightOnResize';
 import { useMobileView } from './hooks/useMobileView';
 import type { StreamChatGenerics } from './types';
 
-type AppProps = {
+type MessagingProps = {
   apiKey: string;
   userToConnect: { id: string; name?: string; image?: string };
   userToken: string | undefined;
@@ -31,9 +31,8 @@ type AppProps = {
   };
 };
 
-const App = (props: AppProps) => {
+const MessagesView = (props: MessagingProps) => {
   const { apiKey, userToConnect, userToken, targetOrigin, channelListOptions } = props;
-  const [_, setIsCreating] = useState(false);
 
   const chatClient = useConnectUser<StreamChatGenerics>(apiKey, userToConnect, userToken);
   const toggleMobile = useMobileView();
@@ -47,7 +46,7 @@ const App = (props: AppProps) => {
   }
 
   return (
-    <Chat client={chatClient} theme={`messaging ${theme}`}>
+    <Chat client={chatClient} theme={`messaging ${theme}`} >
       <div className='messaging__sidebar' id='mobile-channel-list' onClick={toggleMobile}>
         <MessagingChannelListHeader
           theme={theme}
@@ -62,8 +61,6 @@ const App = (props: AppProps) => {
       </div>
       <div>
         <Channel
-          maxNumberOfFiles={10}
-          multipleUploads={true}
         >
             <ChannelInner  />
         </Channel>
@@ -72,4 +69,4 @@ const App = (props: AppProps) => {
   );
 };
 
-export default App;
+export default MessagesView;

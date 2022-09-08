@@ -4,6 +4,7 @@ import './index.css';
 
 import App from './App';
 import { getChannelListOptions } from './channelListOptions';
+import MessagesView from './MessagesView';
 
 const apiKey = process.env.REACT_APP_STREAM_KEY;
 const urlParams = new URLSearchParams(window.location.search);
@@ -22,13 +23,19 @@ const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container!);
 root.render(
   <React.StrictMode>
-    <App
+    {/* <App
       apiKey={apiKey!}
       userToConnect={userToConnect}
       userToken={userToken}
       targetOrigin={targetOrigin!}
       channelListOptions={channelListOptions}
-    />
+    /> */}
+    <MessagesView apiKey={apiKey!}
+      userToConnect={userToConnect}
+      userToken={userToken}
+      targetOrigin={targetOrigin!}
+      channelListOptions={channelListOptions} />
+
   </React.StrictMode>,
 );
 

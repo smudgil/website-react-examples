@@ -6,7 +6,6 @@ import {
 } from 'stream-chat-react';
 import { AvatarGroup } from '../';
 
-import type { Dispatch, SetStateAction } from 'react';
 import type { Channel, ChannelMemberResponse } from 'stream-chat';
 import type { StreamChatGenerics } from '../../types';
 
@@ -23,12 +22,11 @@ const getChannelName = (members: ChannelMemberResponse[]) => {
 
 type Props = ChannelPreviewUIComponentProps & {
   channel: Channel;
-  setIsCreating: Dispatch<SetStateAction<boolean>>;
   setActiveChannel?: ChatContextValue['setActiveChannel'];
 };
 
 const MessagingChannelPreview = (props: Props) => {
-  const { channel, lastMessage, setActiveChannel, setIsCreating } = props;
+  const { channel, lastMessage, setActiveChannel,  } = props;
   const { channel: activeChannel, client } = useChatContext<StreamChatGenerics>();
 
   const members = Object.values(channel.state.members).filter(
@@ -43,7 +41,6 @@ const MessagingChannelPreview = (props: Props) => {
           : 'channel-preview__container'
       }
       onClick={() => {
-        setIsCreating(false);
         setActiveChannel?.(channel);
       }}
     >
