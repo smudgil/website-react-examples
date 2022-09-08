@@ -4,16 +4,6 @@ import type { StreamChatGenerics } from '../types';
 
 import sampleImage from './userImages/photo-1573140247632-f8fd74997d5c.jpeg';
 
-export { ChannelInfoIcon } from './ChannelInfoIcon';
-export { ChannelSaveIcon } from './ChannelSaveIcon';
-export { CommandIcon } from './CommandIcon';
-export { EmojiIcon } from './EmojiIcon';
-export { HamburgerIcon } from './HamburgerIcon';
-export { LightningBoltSmall } from './LightningBoltSmall';
-export { SendIcon } from './SendIcon';
-export { XButton } from './XButton';
-export { XButtonBackground } from './XButtonBackground';
-
 const staticImages = [
   sampleImage,
 ];
