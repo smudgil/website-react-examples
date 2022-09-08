@@ -51,7 +51,7 @@ const MessagingChannelPreview = (props: Props) => {
             {channel.data?.name || getChannelName(members)}
           </p>
         </div>
-        <p className='channel-preview__content-message'>{lastMessage?.text ?? 'Send a message'}</p>
+        <p className='channel-preview__content-message'>{channel.countUnread() > 0 ? `${channel.countUnread()} unread` : (lastMessage?.text ?? "No messages yet.")}</p>
       </div>
     </div>
   );
