@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { ChannelFilters, ChannelOptions, ChannelSort } from 'stream-chat';
 import { Chat, Channel, ChannelList } from 'stream-chat-react';
 
@@ -33,7 +33,6 @@ type AppProps = {
 
 const App = (props: AppProps) => {
   const { apiKey, userToConnect, userToken, targetOrigin, channelListOptions } = props;
-  const [_, setIsCreating] = useState(false);
 
   const chatClient = useConnectUser<StreamChatGenerics>(apiKey, userToConnect, userToken);
   const toggleMobile = useMobileView();

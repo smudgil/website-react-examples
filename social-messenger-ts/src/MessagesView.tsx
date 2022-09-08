@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import type { ChannelFilters, ChannelOptions, ChannelSort } from 'stream-chat';
 import { Chat, Channel, ChannelList } from 'stream-chat-react';
 
